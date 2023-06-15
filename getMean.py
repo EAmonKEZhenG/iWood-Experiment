@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # Define the filename
-filename = 'softwood3.csv'
+filename = 'hardwood3.csv'
 
 # Define the folder where all csv files are stored
 folder_path = "merged_Data"
@@ -79,7 +79,22 @@ while len(max_indices) < 28:
 # Calculate the mean of the differences
 mean_difference = np.mean(differences)
 
+# Create a new DataFrame which only includes the finite values
+finite_data = df['Value'][np.isfinite(df['Value'])]
+
+# Calculate the standard deviation of the finite data
+std_dev = np.std(finite_data.values)
+
+print("Number of NaN values in the data: ", np.sum(np.isnan(df['Value'].values)))
+print("Number of infinite values in the data: ", np.sum(np.isinf(df['Value'].values)))
+
+
+# Calculate the SNR
+snr = 20 * np.log10(mean_difference / std_dev)
+# print("The value is: ", mean_difference , ", " , std_dev , ", " , mean_difference/std_dev )
+
 print("Mean difference:", mean_difference)
+print("SNR:", snr)
 
 # Remove the extension from the original filename
 base_filename = filename.split('.')[0]
@@ -99,5 +114,6 @@ with open(os.path.join('results', output_filename), 'w') as f:
         f.write(str(diff) + '\n')  # write each difference value
         counter +=1
         
-    f.write('total  count is: ' +  str(counter) + '\n')  # write the mean difference
-    f.write('Mean Different: ' +  str(mean_difference))  # write the mean difference
+    f.write('Total count is: ' +  str(counter) + '\n')  # write the mean difference
+    f.write('Mean Difference: ' +  str(mean_difference) + '\n')  # write the mean difference
+    f.write('SNR: ' + str(snr))  # write the SNR

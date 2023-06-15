@@ -25,5 +25,6 @@ This result is for: mdf3.csv
 0.802734470693394
 0.763671966036782
 0.783203218365088
-total  count is: 26
-Mean Different: 1.2627705832262737
+Total count is: 26
+Mean Difference: 1.2627705832262737
+SNR: 26.09291554828834

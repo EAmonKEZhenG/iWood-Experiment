@@ -25,5 +25,6 @@ This result is for: hardwood1.csv
 2.386719034519043
 2.265625270083543
 2.366211219574321
-total  count is: 26
-Mean Different: 2.5192686296471076
+Total count is: 26
+Mean Difference: 2.5192686296471076
+SNR: 26.437893790583114

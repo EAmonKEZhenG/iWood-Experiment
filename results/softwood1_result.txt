@@ -25,5 +25,6 @@ This result is for: softwood1.csv
 0.281250033527613
 0.663086016546004
 0.582031319383532
-total  count is: 26
-Mean Different: 0.5237380432036635
+Total count is: 26
+Mean Difference: 0.5237380432036635
+SNR: 16.78665700826221
