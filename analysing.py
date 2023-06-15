@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 ############Set Data Here################
 # Define the name variable
 name = 'softwood3'
+graph_show = False
 ############Set Data Here################
 
 
@@ -56,7 +57,8 @@ plt.title('Line Graph')
 plt.xlim(0, len(dataList) - 1)
 
 # Display the plot
-plt.show()
+if graph_show == True:
+    plt.show()
 
 # Create a DataFrame from the dataList
 df_export = pd.DataFrame(dataList, columns=['Value'])

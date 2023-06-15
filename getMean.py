@@ -85,7 +85,7 @@ print("Mean difference:", mean_difference)
 base_filename = filename.split('.')[0]
 
 # Create a new filename for the output
-output_filename = base_filename + 'DataMean.txt'
+output_filename = base_filename + '_result.txt'
 
 # Create a results directory if it does not exist
 if not os.path.exists('results'):
