@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = 'softwood3'
+name = 'hardwood3'
 graph_show = False
+graph_save = True
 ############Set Data Here################
 
 
@@ -53,25 +54,32 @@ plt.plot(np.arange(len(dataList)), dataList)
 # Set labels and title
 plt.xlabel('Index')
 plt.ylabel('Value')
-plt.title('Line Graph')
+plt.title( name + 'Graph')
 plt.xlim(0, len(dataList) - 1)
 
-# Display the plot
-if graph_show == True:
-    plt.show()
+
 
 # Create a DataFrame from the dataList
 df_export = pd.DataFrame(dataList, columns=['Value'])
 
 # Define the merged data folder path
 merged_data_folder_path = os.path.join(current_directory, "merged_Data")
-
+merged_graph_folder_path = os.path.join(current_directory, "merged_Graph")
 # Create a merged data directory if it does not exist
 if not os.path.exists(merged_data_folder_path):
     os.makedirs(merged_data_folder_path)
+    
+if not os.path.exists(merged_graph_folder_path):
+    os.makedirs(merged_graph_folder_path)
 
 # Define the export file path
 export_file_path = os.path.join(merged_data_folder_path, name + '.csv')
+if graph_save == True:
+    plt.savefig(os.path.join(merged_graph_folder_path, name + '.png'), format = 'png')
+    
+# Display the plot
+if graph_show == True:
+    plt.show()
 
 # Write DataFrame to a CSV file
 df_export.to_csv(export_file_path, index=False)

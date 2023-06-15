@@ -2,12 +2,12 @@ import pandas as pd
 import numpy as np
 import os
 
-# Define the filename
+###############################
 filename = 'hardwood3.csv'
-
-# Define the folder where all csv files are stored
 folder_path = "merged_Data"
-
+radius = 1000       
+threshold = 1000    ## SNR
+################################
 # Create the full file path by joining the folder path and the filename
 full_file_path = os.path.join(folder_path, filename)
 
@@ -18,7 +18,7 @@ df = pd.read_csv(full_file_path)
 data = df['Value'].values
 
 # Define the radius
-radius = 1000
+# radius = 1000
 
 # Define a list to store the indices of the maximum values
 max_indices = []
@@ -79,21 +79,33 @@ while len(max_indices) < 28:
 # Calculate the mean of the differences
 mean_difference = np.mean(differences)
 
-# Create a new DataFrame which only includes the finite values
-finite_data = df['Value'][np.isfinite(df['Value'])]
 
-# Calculate the standard deviation of the finite data
-std_dev = np.std(finite_data.values)
+# threshold = 1000
 
-print("Number of NaN values in the data: ", np.sum(np.isnan(df['Value'].values)))
-print("Number of infinite values in the data: ", np.sum(np.isinf(df['Value'].values)))
+# Use pandas to get frequency counts for all numbers, including negatives
+freq_counts = pd.Series(data[np.isfinite(data)]).value_counts()
+
+# Only keep numbers that appear more than 'threshold' times
+high_frequency_values = freq_counts[freq_counts > threshold].index.values
+
+# Make sure there are high frequency values
+if high_frequency_values.size == 0:
+    raise ValueError("No values found with frequency over the threshold.")
+
+# Find the maximum and minimum of the high-frequency values
+avg_noise = high_frequency_values.max() - high_frequency_values.min()
 
 
 # Calculate the SNR
-snr = 20 * np.log10(mean_difference / std_dev)
-# print("The value is: ", mean_difference , ", " , std_dev , ", " , mean_difference/std_dev )
+snr = 10* np.log10(mean_difference**2 / avg_noise**2)
+
+# print("Number of NaN values in the data: ", np.sum(np.isnan(df['Value'].values)))
+# print("Number of infinite values in the data: ", np.sum(np.isinf(df['Value'].values)))
 
 print("Mean difference:", mean_difference)
+print("The max get from noise: ", high_frequency_values.max())
+print("The min get from noise: ", high_frequency_values.min())
+print("Average Noise:", avg_noise)
 print("SNR:", snr)
 
 # Remove the extension from the original filename
@@ -115,5 +127,8 @@ with open(os.path.join('results', output_filename), 'w') as f:
         counter +=1
         
     f.write('Total count is: ' +  str(counter) + '\n')  # write the mean difference
+    f.write('Noise Max: ' + str(high_frequency_values.max()) + '\n')
+    f.write('Noise Min: ' + str(high_frequency_values.min()) + '\n')
     f.write('Mean Difference: ' +  str(mean_difference) + '\n')  # write the mean difference
+    f.write('Average Noise: ' + str(avg_noise) + '\n') # write the average noise
     f.write('SNR: ' + str(snr))  # write the SNR
