@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = 'hardwood3'
-graph_show = False
+name = 'mdf3layer_2'
+graph_show = True
 graph_save = True
 ############Set Data Here################
 
