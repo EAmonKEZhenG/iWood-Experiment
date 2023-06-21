@@ -28,6 +28,6 @@ This result is for: 1of2_extra_2.csv
 Total count is: 26
 Noise Max: 0.120117201819085
 Noise Min: -0.06054688221775
-Mean Difference: 1.1052810812789873
+Signal: 1.1052810812789873
 Average Noise: 0.180664084036835
 SNR: 15.732018257596696

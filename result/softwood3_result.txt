@@ -28,6 +28,6 @@ This result is for: softwood3.csv
 Total count is: 26
 Noise Max: 0.139648454147391
 Noise Min: -0.140625016763806
-Mean Difference: 1.0650542135028023
+Signal: 1.0650542135028023
 Average Noise: 0.28027347091119703
 SNR: 11.59579445950368

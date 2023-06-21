@@ -28,6 +28,6 @@ This result is for: mdf3layer_2.csv
 Total count is: 26
 Noise Max: 0.120117201819085
 Noise Min: -0.06054688221775
-Mean Difference: 0.9345328638088319
+Signal: 0.9345328638088319
 Average Noise: 0.180664084036835
 SNR: 14.27445509720311

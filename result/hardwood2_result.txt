@@ -28,6 +28,6 @@ This result is for: hardwood2.csv
 Total count is: 26
 Noise Max: 0.160156269092113
 Noise Min: -0.140625016763806
-Mean Difference: 0.8981746863976766
+Signal: 0.8981746863976766
 Average Noise: 0.300781285855919
 SNR: 9.502199987566808

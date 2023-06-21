@@ -3,11 +3,11 @@ import numpy as np
 import os
 
 ###############################
-filename = '1of4_1.csv'
+filename = 'mdf3layer_2.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR
-output_paht = 'thickness_result'
+output_paht = 'result'
 ################################
 # Create the full file path by joining the folder path and the filename
 full_file_path = os.path.join(folder_path, filename)
@@ -130,6 +130,6 @@ with open(os.path.join(output_paht, output_filename), 'w') as f:
     f.write('Total count is: ' +  str(counter) + '\n')  # write the mean difference
     f.write('Noise Max: ' + str(high_frequency_values.max()) + '\n')
     f.write('Noise Min: ' + str(high_frequency_values.min()) + '\n')
-    f.write('Mean Difference: ' +  str(mean_difference) + '\n')  # write the mean difference
+    f.write('Signal: ' +  str(mean_difference) + '\n')  # write the mean difference
     f.write('Average Noise: ' + str(avg_noise) + '\n') # write the average noise
     f.write('SNR: ' + str(snr))  # write the SNR
