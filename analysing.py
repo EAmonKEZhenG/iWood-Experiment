@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = 'mdf3layer_2'
-graph_show = True
+name = '3of8_4'
+graph_show = False
 graph_save = True
 ############Set Data Here################
 

@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 ###############################
-filename = 'mdf3layer_2.csv'
+filename = 'softwood3.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR
@@ -102,7 +102,7 @@ snr = 10* np.log10(mean_difference**2 / avg_noise**2)
 # print("Number of NaN values in the data: ", np.sum(np.isnan(df['Value'].values)))
 # print("Number of infinite values in the data: ", np.sum(np.isinf(df['Value'].values)))
 
-print("Mean difference:", mean_difference)
+print("Signal:", mean_difference)
 print("The max get from noise: ", high_frequency_values.max())
 print("The min get from noise: ", high_frequency_values.min())
 print("Average Noise:", avg_noise)
