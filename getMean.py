@@ -3,10 +3,11 @@ import numpy as np
 import os
 
 ###############################
-filename = 'softwood3.csv'
+filename = '1of4_1.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR
+output_paht = 'thickness_result'
 ################################
 # Create the full file path by joining the folder path and the filename
 full_file_path = os.path.join(folder_path, filename)
@@ -115,12 +116,12 @@ base_filename = filename.split('.')[0]
 output_filename = base_filename + '_result.txt'
 
 # Create a results directory if it does not exist
-if not os.path.exists('results'):
-    os.makedirs('results')
+if not os.path.exists(output_paht):
+    os.makedirs(output_paht)
 
 # Write the differences to the output file inside the results directory
 counter = 0
-with open(os.path.join('results', output_filename), 'w') as f:
+with open(os.path.join(output_paht, output_filename), 'w') as f:
     f.write('This result is for: ' + filename + '\n')  # write filename
     for diff in differences:
         f.write(str(diff) + '\n')  # write each difference value
