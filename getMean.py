@@ -3,11 +3,11 @@ import numpy as np
 import os
 
 ###############################
-filename = 'IWood_2.csv'
+filename = 'IWood_1.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR
-output_paht = 'result'
+output_paht = 'thickness_result'
 ################################
 # Create the full file path by joining the folder path and the filename
 full_file_path = os.path.join(folder_path, filename)
