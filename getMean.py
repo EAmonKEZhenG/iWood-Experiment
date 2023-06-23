@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 ###############################
-filename = 'mdf3layer_2.csv'
+filename = 'IWood_2.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR

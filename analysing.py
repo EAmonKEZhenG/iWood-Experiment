@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = '3of8_4'
+name = 'IWood_1'
 graph_show = False
 graph_save = True
 ############Set Data Here################
