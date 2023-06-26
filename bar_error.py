@@ -9,6 +9,7 @@ show_graph = True
 save_graph = True
 ###
 
+
 # Ask the user for the directory to read the files from
 directory_name = input("Enter the directory name to read the files from: ")
 
