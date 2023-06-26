@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 ############Set Data Here################
 # Define the name variable
 name = 'IWood_1'
-graph_show = False
+graph_show = True
 graph_save = True
 ############Set Data Here################
 
