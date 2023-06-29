@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 ###############################
-filename = 'IWood_1.csv'
+filename = '1of2(2)_Iwood_3.csv'
 folder_path = "merged_Data"
 radius = 1000       
 threshold = 1000    ## SNR

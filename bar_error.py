@@ -24,7 +24,7 @@ signals = {}
 snrs = {}
 
 # Define order of the file types
-order = ['IWood', '3of4', '1of2', '3of8', '1of4', '1of8']
+order = ['IWood', '3of4', '1of2', '1of2(2)', '3of8', '1of4', '1of8']
 
 # Function to sort file types according to defined order
 def sort_file_types(file_type):

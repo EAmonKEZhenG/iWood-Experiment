@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = 'IWood_1'
+name = '1of2(2)_Iwood_1'
 graph_show = True
 graph_save = True
 ############Set Data Here################
