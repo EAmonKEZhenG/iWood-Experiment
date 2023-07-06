@@ -24,7 +24,7 @@ signals = {}
 snrs = {}
 
 # Define order of the file types
-order = ['IWood', '3of4', '1of2', '1of2(2)', '3of8', '1of4', '1of8']
+order = ['1of2', '2', '3']
 
 # Function to sort file types according to defined order
 def sort_file_types(file_type):
@@ -87,14 +87,14 @@ plt.figure()
 plt.bar(file_types, avg_signals, yerr=std_signals, capsize=10)
 
 # Set the labels and title
-plt.xlabel('Thickness')
+plt.xlabel('number of layer')
 plt.ylabel('Average Signal')
-plt.title('Average Signal per Thickness')
+plt.title('Average Signal with Different # of Layer')
 if save_graph == True:
     # Save the plot
     graph_directory = os.path.join(directory, 'graph')
     os.makedirs(graph_directory, exist_ok=True)
-    plt.savefig(os.path.join(graph_directory, 'Average_Signal_Thickness.png'))
+    plt.savefig(os.path.join(graph_directory, 'Average_Signal_layer.png'))
 
 if show_graph == True:  
     # Show the plot
@@ -105,12 +105,12 @@ plt.figure()
 plt.bar(file_types, avg_snrs, yerr=std_snrs, capsize=10)
 
 # Set the labels and title
-plt.xlabel('Thickness')
+plt.xlabel('number of layer')
 plt.ylabel('Average SNR')
 plt.title('Average SNR per File Type')
 if save_graph == True:
     # Save the plot
-    plt.savefig(os.path.join(graph_directory, 'Average_SNR_Thickness.png'))
+    plt.savefig(os.path.join(graph_directory, 'Average_SNR_layer.png'))
 
 if show_graph == True:  
     # Show the plot

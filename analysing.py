@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 
 ############Set Data Here################
 # Define the name variable
-name = '1of2(2)_Iwood_1'
-graph_show = True
+name = 'IWood_without_cage_pure'
+graph_show = False
 graph_save = True
 ############Set Data Here################
 
